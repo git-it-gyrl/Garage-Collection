@@ -1,0 +1,3 @@
+{
+    "/garage/:id": "/garage/:id?_embed=comments"
+  }
