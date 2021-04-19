@@ -1,0 +1,68 @@
+Learning Goals
+Design and architect features across a frontend
+Communicate and collaborate in a technical environment
+Integrate JavaScript and an external API
+Debug issues in small- to medium-sized projects
+Build and iterate on a project MVP
+Introduction
+Welcome to JavaScript Project Mode!
+
+You’ve worked so hard to get here and have learned a ton. Now it's time to bring it all together!
+
+For this project, you're going build a Single Page Application (SPA). Building this application will be challenging because it will integrate everything you've learned up to this point. Your frontend will be built with HTML, CSS, and JavaScript and will communicate with a public API.
+
+Project Requirements
+Your app must be a HTML/CSS/JS frontend that accesses data from am external API. All interactions between the client and the API should be handled asynchronously and use JSON as the communication format.
+
+Your entire app must run on a single page. There should be NO redirects. In other words, your project will contain a single HTML file.
+
+Some interactivity is required. This could be as simple as adding a "like" button or adding comments. These interactions do not need to persist after reloading the page.
+
+Stretch Goals
+Set up a JSON server in your project to persist your app's interactivity.
+Strategy, Timeline, and Tips
+Planning
+Plan out your features
+Develop user stories
+“As [ a user ], I want [ to perform this action ] so that [ I can accomplish this goal ].”
+Features should not need you there to explain them to users
+Plan out the structure of your JSON requests
+Project Pitches
+Before you start working on your project, you'll pitch your project idea to your instructors for approval and feedback.
+
+For your project pitch, you should include:
+
+The basic story of your application
+The core features of your MVP
+The API data you'll be using and how you'll use it
+Challenges you expect to face
+MVP ASAP
+Build a Minimum Viable Product (MVP) as quickly as possible.
+Pick an API and explore it early on to ensure it will work for your needs
+Rough Timeline
+Day 1 - Idea, Project Pitches, first commit
+Day 2 - MVP focused, first feature working
+Day 3 - MVP targeted to be done by this day at the latest, additional features
+Day 4 - Final features, bugfixes, polish
+Feedback
+Get feedback from instructors before you start to build
+Get feedback from your peers as you build each feature. This will help identify bugs and design improvements
+Get feedback on your code from instructors as you build
+Instructor Guidance
+You should strive to solve problems independently, but you also shouldn't waste your time stuck on a problem. A good guideline for a small bug is the rule of 10s:
+
+10 minutes debugging the code
+10 minutes using Google and StackOverflow to try to find an answer
+10 minutes asking your teammates or fellow students for help
+Asking an instructor
+If you seek out instructor guidance on your design from the start, they might help steer you into design and architectural decisions that will help you down the road. That will also give the instructors context for what your app is supposed to do, so you won't need to explain everything to them when asking for help debugging.
+
+Guidelines for Staying Organized
+Write down the decisions you make about your project. This will not only help you think more clearly, it will also help you communicate your project to instructors when asking for help. In addition to writing everything down, we also recommend the following to help stay organized and on track:
+
+Describe/sketch your ideas (use diagrams!).
+Start by creating a frontend directory with the basic files you'll need
+Next, build enough code to get some API data to work with. Don't worry about building all of your async code yet, just get to the point where you can access one endpoint on an API, then start working on getting that data displayed.
+Then, continue to build additional async code and frontend features.
+Continue building features one by one.
+
