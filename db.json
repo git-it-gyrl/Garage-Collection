@@ -2,8 +2,8 @@
     "cars": [
       {
         "id": 1,
-        "Make": "Mustang",
-        "Model": "GT",
+        "make": "Mustang",
+        "model": "GT",
         "image": "https://revologycars.com/wp-content/uploads/2019/03/Revology-66fb.jpg",
         "year": "1966"
       }
