@@ -1,4 +1,5 @@
 const url='http://localhost:3000/garage/'
+const commentUrl="http://localhost:3000/comments/"
 
 fetch(url)
 .then(res=>res.json())
@@ -10,10 +11,11 @@ addCarForm=document.querySelector('.add-car-form');
 
 function renderPage(car){
 
-console.log()
+console.log(car[1])
 
 
 car.forEach(function(car,i){
+
 
 let newDiv=document.createElement('div')
 newDiv.className="car-card"
@@ -41,7 +43,7 @@ let carLikes=document.createElement('h3')
 carLikes.innerText=`${car.likes} likes`;
 newDiv.appendChild(carLikes)
 
-
+// from like 47-73  this creates the form container/box/button for each car
 let commentsContainer=document.createElement('div')
 commentsContainer.className="comments-container"
 newDiv.appendChild(commentsContainer)
@@ -108,6 +110,7 @@ newDiv.appendChild(deleteButton)
 
 
 
+
 deleteButton.addEventListener('click',(event)=>{
     let removeCar=document.querySelectorAll('.car-card')[i]
     let carId=car.id;
@@ -118,8 +121,39 @@ deleteButton.addEventListener('click',(event)=>{
 
 })
 
+// UNDER CONSTRUCTION !!!
 
 
+// commentForm.addEventListener('submit',(event=>{
+//     event.preventDefault();
+
+//     newUl=document.createElement('ul')
+//     comments.appendChild(newUl)
+//     newUl.innerText=event.target.comment.value;
+//     let ul=document.querySelectorAll('ul');
+//     let carId=car.id
+
+
+//     let addComment={
+
+//         "content": newUl.innerText
+
+//     }
+
+//     patchComments(addComment,carId)
+    
+//     ul.forEach((element)=>{
+//         console.log(element)
+
+
+
+   
+
+//     })
+
+
+
+// }))
 
     
 
@@ -183,7 +217,20 @@ function postCar(car){
 
   }
 
+function patchComments(comment,id){
 
+    options={
+        method: "PATCH",
+        headers: {
+          "Content-Type":"application/json",
+          "Accept":"application/json"
+        },
+        body: JSON.stringify(comment)
+      }
+    
+      fetch (commentUrl+id,options)
+
+}
 
 
 
@@ -203,5 +250,8 @@ function postCar(car){
     
     
     })
+
+
+
 
 
