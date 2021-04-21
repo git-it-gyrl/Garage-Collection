@@ -1,4 +1,6 @@
 {
-    "/images/:id": "/images/:id?_embed=comments"
+
+    "/garage/:id": "/garage/:id?_embed=comments"
   }
-  
+
+
