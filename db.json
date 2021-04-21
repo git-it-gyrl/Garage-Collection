@@ -1,25 +1,28 @@
-
 {
-    "toys": [
-      {
-        "id": 1,
-        "name": "Woody",
-        "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-        "likes": 5
-      },
-      {
-        "id": 2,
-        "name": "Buzz Lightyear",
-        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-        "likes": 8
-      },
-      {
-        "id": 3,
-        "name": "Mr. Potato Head",
-        "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-        "likes": 3
-      },
-   
- 
-    ]
-  }
+  "garage": [
+    {
+      "make": "Tesla",
+      "model": "cybertruck",
+      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-tesla-cyber-truck-mmp-1-1579127142.jpg?crop=0.923xw:0.880xh;0.0577xw,0.120xh&resize=1200:*",
+      "year": "2021",
+      "likes": 0,
+      "id": 1
+    },
+    {
+      "make": "lexus",
+      "model": "gs300",
+      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-tesla-cyber-truck-mmp-1-1579127142.jpg?crop=0.923xw:0.880xh;0.0577xw,0.120xh&resize=1200:*",
+      "year": "2008",
+      "likes": 0,
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "carId": 1,
+      "content": "wow"
+    }
+  ]
+}
+

@@ -5,7 +5,7 @@ body {
   #car-header {
     display: flex;
     justify-content: center;
-    background: pink;
+    background: #515DA2;
     opacity: .8;
     height: 7rem;
     padding: 1rem;
@@ -13,13 +13,13 @@ body {
   #car-header img {  
     height: 6rem;
     width: auto;
+
   }
   #car-collection {
     margin: 2rem;
   }
-  .card {
+  .car-card {
     text-align: center;
-    border: grey solid 1px;
     padding: 1rem;
     width: 15rem;
     height: 25rem;
@@ -57,11 +57,7 @@ body {
     opacity: .8;
   }
   .add-car-form {
-    background-color: blueviolet;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    height:
+    width: 80%
   }
   .submit {
     position: relative;

@@ -1,47 +1,82 @@
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Car Garage</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div id="car-header">
-      <img
-        src="https://fontmeme.com/permalink/180719/67429e6afec53d21d64643101c43f029.png"
-        alt="car-header"
-      />
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My garage</title>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <h1>My Garage</h1>
+​
+  <form class="add-car-form">
+    <h3>Add a car:</h3>
+​
+    <input
+      type="text"
+      name="make"
+      value=""
+      placeholder="Make"
+      class="input-text"
+    />
+    <br />
+    <input
+      type="text"
+      name="model"
+      value=""
+      placeholder="model"
+      class="input-text"
+    />
+    <br />
+    <input
+      type="text"
+      name="image"
+      value=""
+      placeholder="Image"
+      class="input-text"
+    />
+    <br />
+    <input
+      type="text"
+      name="year"
+      value=""
+      placeholder="year"
+      class="input-text"
+    />
+    
+    
+    <br />
+    <input
+      type="submit"
+      name="submit"
+      value="Add Car"
+      class="submit"
+    />
+ 
+  </form>
+  <br>
+​
+​
+​
+​
+​
+​
+  <div class="car-collection">
+​
+​
+​
+​
+​
+​
+​
+  </div>
+​
+​
+​
+​
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
 
-    <div class="container">
-      <form class="add-car-form">
-        <h3>Create a car!</h3>
 
-        <input
-          type="text"
-          name="name"
-          value=""
-          placeholder="Enter a car's name..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="image"
-          value=""
-          placeholder="Enter a car image URL..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Create Car"
-          class="submit"
-        />
-      </form>
-    </div>
-    <p style="text-align:center">
-      Andy needs your help! <button id="new-car-btn">Add a new car!</button>
-    </p>
