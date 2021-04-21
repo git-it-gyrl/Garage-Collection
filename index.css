@@ -10,7 +10,7 @@ body {
     height: 7rem;
     padding: 1rem;
   }
-  #car-header img { 
+  #car-header img {  
     height: 6rem;
     width: auto;
 
@@ -18,14 +18,12 @@ body {
   #car-collection {
     margin: 2rem;
   }
-  .card {
-
+  .car-card {
     text-align: center;
-    border: grey solid 1px;
     padding: 1rem;
     width: 15rem;
     height: 25rem;
-    /* display: inline-grid; */
+    display: inline-grid;
     margin: 1rem 2rem;
     box-shadow: 3px 4px #E04B52
   }
