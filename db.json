@@ -5,23 +5,25 @@
       "model": "cybertruck",
       "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-tesla-cyber-truck-mmp-1-1579127142.jpg?crop=0.923xw:0.880xh;0.0577xw,0.120xh&resize=1200:*",
       "year": "2021",
-      "likes": 0,
+      "likes": 5,
       "id": 1
-    },
-    {
-      "make": "lexus",
-      "model": "gs300",
-      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-tesla-cyber-truck-mmp-1-1579127142.jpg?crop=0.923xw:0.880xh;0.0577xw,0.120xh&resize=1200:*",
-      "year": "2008",
-      "likes": 0,
-      "id": 2
     }
   ],
   "comments": [
     {
       "id": 1,
       "carId": 1,
-      "content": "wow"
+      "content": "Nice car!"
+    },
+    {
+      "carId": 2,
+      "content": "wow",
+      "id": 2
+    },
+    {
+      "carId": 1,
+      "content": "hi",
+      "id": 3
     }
   ]
 }

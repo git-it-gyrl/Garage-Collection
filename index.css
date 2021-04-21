@@ -19,26 +19,27 @@ body {
     margin: 2rem;
   }
   .car-card {
+
     text-align: center;
     padding: 1rem;
     width: 15rem;
     height: 25rem;
-    display: inline-grid;
     margin: 1rem 2rem;
-    box-shadow: 3px 4px #E04B52
+    box-shadow: 3px 4px gray;
+    display: inline-grid;
   }
   .carImage {
     justify-self: center;
-    height: 12rem;
-    width: auto;
+    /* height: 25%; */
+    max-width: 100%;
   }
   button {
     position: relative;
     background-color: #E04B52;
     border: none;
     border-radius: 5px;
-    height: 3rem;
-    width: max-content;
+    height: auto;
+    width: auto;
     color: whitesmoke;
     font-size: 18px;
     justify-self: center;
@@ -84,3 +85,13 @@ body {
     font-family: monospace;
     margin: 3px;
   }
+
+  h3{
+
+    margin:auto;
+  }
+  ul{
+    padding-left: 0;
+  }
+
+ 

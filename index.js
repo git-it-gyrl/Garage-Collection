@@ -11,7 +11,6 @@ addCarForm=document.querySelector('.add-car-form');
 
 function renderPage(car){
 
-console.log(car[1])
 
 
 car.forEach(function(car,i){
@@ -110,13 +109,14 @@ newDiv.appendChild(deleteButton)
 
 
 
-
 deleteButton.addEventListener('click',(event)=>{
     let removeCar=document.querySelectorAll('.car-card')[i]
     let carId=car.id;
     deleteCar(carId)
+    console.log(comments)
 
     removeCar.remove();
+
 
 
 })
@@ -124,40 +124,33 @@ deleteButton.addEventListener('click',(event)=>{
 // UNDER CONSTRUCTION !!!
 
 
-// commentForm.addEventListener('submit',(event=>{
-//     event.preventDefault();
-
-//     newUl=document.createElement('ul')
-//     comments.appendChild(newUl)
-//     newUl.innerText=event.target.comment.value;
-//     let ul=document.querySelectorAll('ul');
-//     let carId=car.id
+commentForm.addEventListener('submit',(event=>{
+    event.preventDefault();
 
 
-//     let addComment={
+    newUl=document.createElement('ul')
+    comments.appendChild(newUl)
+    newUl.innerText=event.target.comment.value;
+    let ul=document.querySelectorAll('ul');
+    let carId=car.id
 
-//         "content": newUl.innerText
 
-//     }
+    let addComment={
+        "carId": carId,
+        "content": newUl.innerText
 
-//     patchComments(addComment,carId)
+    }
+
+    postComments(addComment,carId)
     
-//     ul.forEach((element)=>{
-//         console.log(element)
+ 
+  
 
 
 
-   
-
-//     })
-
-
-
-// }))
+}))
 
     
-
-
 
 
 
@@ -166,11 +159,49 @@ deleteButton.addEventListener('click',(event)=>{
     
 });
 
+fetch(commentUrl)
+.then(res=>res.json())
+.then(comments=>  renderComment(comments));
 
+function renderComment(comments){
 
+   car.forEach(function(car,i){
+        let carId=car.id;
+        console.log(carId)
+   
+
+    comments.forEach(function(comment){
+        let thisCarId=comment.carId;
+
+        if(thisCarId===carId){
+            newComment=document.createElement('ul');
+            newComment.innerText=comment.content;
+            let commentDiv= document.querySelectorAll('.comments')[i];
+            commentDiv.appendChild(newComment)
+
+        }
+
+    })
+})
 
 
 }
+
+
+
+
+
+
+
+
+
+////// car end
+}
+
+
+
+
+
 
 
 function deleteCar(id){
@@ -186,6 +217,22 @@ function deleteCar(id){
       fetch (url+id,options)
 
 }
+
+function deleteComments(id){
+    options={
+        method: "DELETE",
+        headers: {
+          "Content-Type":"application/json",
+          "Accept":"application/json"
+        },
+        body:null
+      }
+    
+      fetch (commentUrl+id,options)
+
+}
+
+
 
 
 function postCar(car){
@@ -217,10 +264,10 @@ function postCar(car){
 
   }
 
-function patchComments(comment,id){
+function postComments(comment){
 
     options={
-        method: "PATCH",
+        method: "POST",
         headers: {
           "Content-Type":"application/json",
           "Accept":"application/json"
@@ -228,7 +275,7 @@ function patchComments(comment,id){
         body: JSON.stringify(comment)
       }
     
-      fetch (commentUrl+id,options)
+      fetch (commentUrl,options)
 
 }
 
@@ -245,9 +292,9 @@ function patchComments(comment,id){
         "likes":0
     
     }
-    
     postCar(newCar)
-    
+    location.reload();
+
     
     })
 
