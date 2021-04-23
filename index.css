@@ -90,8 +90,33 @@ body {
 
     margin:auto;
   }
-  ul{
-    padding-left: 0;
+ 
+
+  .comments{
+
+    height:50%;
+    width:50%;
+    list-style-type: none;
+    margin:auto ;
+    padding-left: 10px;
+    font-size: 0.85rem;
+
+
+    height:50%;
+    width:50%;
+    border:1px solid #ccc;
+    overflow:auto
+
+
+
+
+
+
   }
 
+  .comments ul {
+    margin: 2px ;
+    letter-spacing: 0.2px;
+    padding-left: 0px;
+  }
  

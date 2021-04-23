@@ -1,48 +1,52 @@
+//url
 const url='http://localhost:3000/garage/'
 const commentUrl="http://localhost:3000/comments/"
-
+//fetch method
 fetch(url)
 .then(res=>res.json())
 .then(car=>renderPage(car));
 
 
-
+// add-car-form variable
 addCarForm=document.querySelector('.add-car-form');
 
+//function used to render our JSON data
 function renderPage(car){
 
 
-
+//for each method that will apply to each "car" in db
 car.forEach(function(car,i){
 
-
+//creates a new "card" container for each car
 let newDiv=document.createElement('div')
 newDiv.className="car-card"
 newDiv.style="width:300px"
 document.querySelector('.car-collection').appendChild(newDiv);
-
+//car image
 let carImage= document.createElement('img')
+carImage.src="car-pic2.jpeg"
 carImage.src=car.image
 carImage.className="carImage"
 newDiv.appendChild(carImage)
-
+//car make
 let carMake=document.createElement('h2')
 carMake.innerText=car.make
 newDiv.appendChild(carMake)
-
+//car model
 let carModel= document.createElement('h3')
 carModel.innerText=car.model
 newDiv.appendChild(carModel)
-
+//car year
 let carYear=document.createElement('h3')
 carYear.innerText=car.year;
 newDiv.appendChild(carYear)
-
+// car likes
 let carLikes=document.createElement('h3')
 carLikes.innerText=`${car.likes} likes`;
 newDiv.appendChild(carLikes)
 
-// from like 47-73  this creates the form container/box/button for each car
+// from like 47-75  this creates the form container/box/button for each car
+
 let commentsContainer=document.createElement('div')
 commentsContainer.className="comments-container"
 newDiv.appendChild(commentsContainer)
@@ -72,60 +76,51 @@ newDiv.appendChild(commentsContainer)
     commentForm.appendChild(commentButton)
 
 
+    let carLikeButton=document.createElement('button')
+    carLikeButton.className="car-like-button"
+    carLikeButton.innerText="Like"
+    commentsContainer.appendChild(carLikeButton)
+
+
+    // event listener for car like button
+    carLikeButton.addEventListener('click',(event)=>{
+        let addedLikes=++car.likes
+        carLikes.innerText=`${addedLikes} likes`
+
+        let newLikes={
+
+            "likes":addedLikes
+
+        }
+
+        patchCar(newLikes,car.id)
+
+    })
 
 
 
+    let deleteButton= document.createElement('button')
+    deleteButton.className="removeButton"
+    deleteButton.innerText="Remove Car"
+    commentsContainer.appendChild(deleteButton)
 
 
+    //event listener for remove car button
+    deleteButton.addEventListener('click',(event)=>{
+        let removeCar=document.querySelectorAll('.car-card')[i]
+        let carId=car.id;
+        deleteCar(carId)
 
-
-
-let carLikeButton=document.createElement('button')
-carLikeButton.className="car-like-button"
-carLikeButton.innerText="Like"
-newDiv.appendChild(carLikeButton)
-
-carLikeButton.addEventListener('click',(event)=>{
-let addedLikes=++car.likes
-carLikes.innerText=`${addedLikes} likes`
-
-console.log(addedLikes)
-let newLikes={
-
-    "likes":addedLikes
-
-}
-
-patchCar(newLikes,car.id)
-
-})
-
-
-
-let deleteButton= document.createElement('button')
-deleteButton.className="removeButton"
-deleteButton.innerText="Remove Car"
-newDiv.appendChild(deleteButton)
-
-
-
-deleteButton.addEventListener('click',(event)=>{
-    let removeCar=document.querySelectorAll('.car-card')[i]
-    let carId=car.id;
-    deleteCar(carId)
-    console.log(comments)
-
-    removeCar.remove();
+        removeCar.remove();
 
 
 
 })
 
-// UNDER CONSTRUCTION !!!
 
-
+// comment form event listener
 commentForm.addEventListener('submit',(event=>{
-    event.preventDefault();
+    // event.preventDefault();
 
 
     newUl=document.createElement('ul')
@@ -144,20 +139,24 @@ commentForm.addEventListener('submit',(event=>{
     postComments(addComment,carId)
     
  
-  
+
+    document.querySelector('.comment-input').value='';
 
 
 
 }))
 
-    
+   // drop down list 
+let dropDownList=document.querySelector('#carList');
+let carOption= document.createElement('option')
+carOption.innerText= car.model;
+dropDownList.appendChild(carOption)
 
 
 
 
-
-    
-});
+// end of foreach    
+})
 
 fetch(commentUrl)
 .then(res=>res.json())
@@ -167,7 +166,6 @@ function renderComment(comments){
 
    car.forEach(function(car,i){
         let carId=car.id;
-        console.log(carId)
    
 
     comments.forEach(function(comment){
@@ -186,7 +184,6 @@ function renderComment(comments){
 
 
 }
-
 
 
 
@@ -299,6 +296,62 @@ function postComments(comment){
     })
 
 
+    function carSelector(){
 
+        fetch(url)
+        .then(res=>res.json())
+        .then(car=>renderPage(car));
+
+
+
+// function will for the dropdown filter
+        function renderPage(car){
+
+            car.forEach(function(car,i){
+
+
+                    let carModelName=car.model;
+                
+                    let carList= document.querySelector('#carList')
+                    let selectedCar=carList.value
+                    let removeCar=document.getElementsByClassName('car-card')
+
+
+
+
+                    if(carModelName!==selectedCar){
+                        
+                        
+
+
+
+                          console.log(removeCar[i])
+
+                         removeCar[i].style.display="none"
+
+                  
+
+                    }
+
+               
+                
+               
+
+
+
+            })
+
+       
+
+
+        }
+        
+        
+            
+            
+            
+            
+            
+            }
 
 
